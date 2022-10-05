@@ -1,3 +1,40 @@
+.nav-set {
+  padding: 30px 0;
+}
+
+.nav-all {
+  gap: 150px;
+}
+
+.me-auto {
+  gap: 40px;
+  font-size: 14px;
+}
+
+.main-bg {
+  height: 100vh;
+  background-image: url('./img/main1.jpg');
+  background-size: cover;
+}
+
+.row {
+  padding: 100px 0;
+  text-align: left;
+}
+
+.prod {
+  margin-bottom: 20px;
+}
+
+.row p {
+  border-bottom: 1px solid #eeeeee;
+  font-size: 16px;
+}
+
+
+
+
+
 .App {
   text-align: center;
 }
@@ -32,6 +69,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
