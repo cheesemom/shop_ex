@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Container, Navbar, Nav } from 'react-bootstrap'
 import './App.css';
 import data from './data.js';
-import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom'
+import { Routes, Route, Link, useNavigate, Outlet, useParams } from 'react-router-dom'
 import Detail from './pages/detail';
 
 
@@ -18,29 +18,27 @@ function App() {
       <Navbar bg="light" variant="light" className="nav-set">
         <Container className="nav-all">
           <div className="me-logo">
-            <img src={"/assets/img/logo.jpg"} />
+            <img src={"/assets/img/logo.jpg"} width="100%" />
           </div>
           <Nav className="me-auto">
-            <Nav.Link onClick={() => { navigate('/detail') }}>COLLECTION</Nav.Link>
-            <Nav.Link href="#">NEW</Nav.Link>
-            <Nav.Link href="#">BAG</Nav.Link>
+            <Nav.Link onClick={() => { navigate(-1) }}>COLLECTION</Nav.Link>
+            <Nav.Link onClick={() => navigate('/')}>NEW</Nav.Link>
+            <Nav.Link onClick={() => navigate('/detail/1')}>BAG</Nav.Link>
             <Nav.Link href="#">MIU WANDER</Nav.Link>
             <Nav.Link href="#">MIU MIU CLUB</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
 
-
-      <Link to="/">홈</Link>
-      <Link to="/detail">상세페이지</Link>
-
+      {/* <Link to="/">홈</Link>
+      <Link to="/detail">상세페이지</Link> */}
 
       <Routes>
         <Route path="/" element={
           <>
             <div className="main-bg"></div>
-            <div class="container">
-              <div class="row">
+            <div className="container">
+              <div className="row">
                 {ac.map((a, i) => {
                   return <Card ac={ac[i]} i={i + 1} />
                 })}
@@ -49,19 +47,33 @@ function App() {
           </>
         } />
 
-        <Route path="/detail" element={<Detail />} />
-      </Routes>
+        <Route path="/detail/:id" element={<Detail ac={ac} />} />
 
+
+        <Route path="/event" element={<Event />}>
+          <Route path="1" element={<p>Cabbage juice for the first order!</p>} />
+          <Route path="2" element={<p>Get a birthday coupon!</p>} />
+        </Route>
+
+      </Routes>
 
     </div>
   );
 }
 
+function Event() {
+  return (
+    <div>
+      <p>❤ TODAY EVENT ❤</p>
+      <Outlet></Outlet>
+    </div>
+  )
+}
 
 function Card(props) {
   return (
     <div class="col">
-      <img src={process.env.PUBLIC_URL + '/assets/img/acc' + props.i + '.jpg'} width="90%" />
+      <img src={process.env.PUBLIC_URL + '/assets/img/acc' + props.i + '.jpg'} width="100%" />
       <h5>{props.ac.title}</h5>
       <p>{props.ac.price}</p>
     </div>

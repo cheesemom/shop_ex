@@ -1,3 +1,4 @@
+/* App */
 .nav-set {
   padding: 30px 0;
 }
@@ -8,11 +9,11 @@
 
 .me-auto {
   gap: 40px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .main-bg {
-  height: 100vh;
+  height: 750px;
   background-image: url('./img/main1.jpg');
   background-size: cover;
 }
@@ -22,14 +23,40 @@
   text-align: left;
 }
 
+
+
+/* detail */
 .prod {
   margin-bottom: 20px;
+  font-size: 25px;
 }
 
-.row p {
+.pri {
   border-bottom: 1px solid #eeeeee;
-  font-size: 16px;
+  line-height: 30px;
+  font-size: 15px;
+  margin: 0 0 10px 0;
 }
+
+.flex {
+  display: flex;
+  gap: 25px;
+  margin: 35px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
