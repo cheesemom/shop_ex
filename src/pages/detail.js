@@ -1,4 +1,3 @@
-import { hover } from '@testing-library/user-event/dist/hover';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components'
@@ -49,6 +48,7 @@ function Detail(props) {
                 <div className="col-md-6">
                     <img src={process.env.PUBLIC_URL + '/assets/img/acc1.jpg'} width="90%" />
                 </div>
+
                 <div className="col-md-6">
                     <h4 className="prod">{props.ac[id].title}</h4>
                     <p className="pri">{props.ac[id].price}</p>

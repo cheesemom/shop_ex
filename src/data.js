@@ -15,10 +15,18 @@ let data = [
 
     {
         id: 2,
+        title: "마테라쎄 나파 가죽 카드 홀더",
+        content: "Born in Italy",
+        price: 490000
+    },
+
+    {
+        id: 3,
         title: "데님 발레리나",
         content: "Born in Italy",
         price: 1240000
     }
+
 ]
 
 

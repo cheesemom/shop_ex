@@ -4,6 +4,7 @@ import './App.css';
 import data from './data.js';
 import { Routes, Route, Link, useNavigate, Outlet, useParams } from 'react-router-dom'
 import Detail from './pages/detail';
+import ReactPlayer from 'react-player/lazy';
 
 
 function App() {
@@ -11,10 +12,8 @@ function App() {
   let [ac] = useState(data)
   let navigate = useNavigate();
 
-
   return (
     <div className="App">
-
       <Navbar bg="light" variant="light" className="nav-set">
         <Container className="nav-all">
           <div className="me-logo">
@@ -23,7 +22,7 @@ function App() {
           <Nav className="me-auto">
             <Nav.Link onClick={() => { navigate(-1) }}>COLLECTION</Nav.Link>
             <Nav.Link onClick={() => navigate('/')}>NEW</Nav.Link>
-            <Nav.Link onClick={() => navigate('/detail/1')}>BAG</Nav.Link>
+            <Nav.Link onClick={() => navigate('/detail/0')}>BAG</Nav.Link>
             <Nav.Link href="#">MIU WANDER</Nav.Link>
             <Nav.Link href="#">MIU MIU CLUB</Nav.Link>
           </Nav>
@@ -48,7 +47,6 @@ function App() {
         } />
 
         <Route path="/detail/:id" element={<Detail ac={ac} />} />
-
 
         <Route path="/event" element={<Event />}>
           <Route path="1" element={<p>Cabbage juice for the first order!</p>} />
@@ -79,6 +77,8 @@ function Card(props) {
     </div>
   )
 }
+
+
 
 
 export default App;
